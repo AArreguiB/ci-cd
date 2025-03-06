@@ -1,8 +1,9 @@
 name: CI
 on:
   pull_request:
-    branches: [ "main" ]
-  workflow_call:
+    branches: [ "main" ]   # Esto hace que el workflow se ejecute cuando haya un pull request hacia la rama main.
+  workflow_call:  # Esto permite que otro workflow pueda invocar este workflow directamente.
+jobs:
   html-validator:
     runs-on: ubuntu-latest
     steps:
